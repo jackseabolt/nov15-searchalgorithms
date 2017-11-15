@@ -182,23 +182,38 @@ function postOrderPrint(tree, arr=[]) {
 
 const prices = [128, 97, 528, 121, 123, 98, 97, 105];
 
-const makeMoney = (prices) => {
-    let largest=0; 
-    let smallest=0; 
-    let difference = 0; 
-    for (let i =0; i < prices.length; i++) {
-        if(prices[i] > largest) {
-            largest = prices[i]; 
-        }
-        if(prices[i] < smallest) {
-            smallest = prices[i]; 
-        }
-        if((largest - smallest > difference) && (largest !== 0) && (smallest !== 0 )) {
-            difference = largest - smallest
-        }
+const makeMunny = prices => {
+  const pricePoints = [];
+  let highestEver;
+  for (let i = prices.length - 1 ; i>=0 ; i--) {
+    if (prices[i] > highestEver) {
+        pricePoints.push({high:prices[i], low:prices[i], delta:0});
+    } else if (prices[i] < ) {
+
     }
-    return difference; 
+  }
+
 };
+
+
+
+// const makeMoney = (prices) => {
+//   let largest=0; 
+//   let smallest=0; 
+//   let difference = 0; 
+//   for (let i =0; i < prices.length; i++) {
+//     if(prices[i] > largest) {
+//       largest = prices[i]; 
+//     }
+//     if(prices[i] < smallest) {
+//       smallest = prices[i]; 
+//     }
+//     if((largest - smallest > difference) && (largest !== 0) && (smallest !== 0 )) {
+//       difference = largest - smallest;
+//     }
+//   }
+//   return difference; 
+// };
 
 console.log(makeMoney(prices));
 
@@ -226,17 +241,17 @@ console.log(makeMoney(prices));
 // Exercise 6 - This is fun exercise to do - make this an optional one after you are done with all the exercises above
 // Imagine that you wanted to find what the highest floor of a 100 story building you could drop an egg was, without the egg breaking. But you only have two eggs. Write an algorithm to work out which floors you should drop the eggs from to find this out in the most efficient way
 
-11
-1111
+11;
+1111;
 
 
-50
-25
-12
-6
-3
-1
-0
+50;
+25;
+12;
+6;
+3;
+1;
+0;
 
 
 
