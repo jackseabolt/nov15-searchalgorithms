@@ -114,6 +114,55 @@ const searchDewey = (theBook, theList, start=0, end=theList.length) => {
 // InOrder: 4, 10, 12, 15, 18, 22, 24, 25, 31, 35, 44, 50, 66, 70, 90
 // Post-order: 4, 12, 10, 22, 18, 24, 15, 31, 44, 35, 66, 90, 70, 50, 25
 
+const starterData = [25, 15, 50, 10, 24, 35, 70, 4, 12, 18, 31, 44, 66, 90, 22]
+const ourTree = new BinarySearchTree(); 
+starterData.forEach(num => ourTree.insert(num, num)); 
+
+function preOrderPrint(tree, arr=[]) {
+    arr.push(tree.value); 
+    if(tree.left){
+        preOrderPrint(tree.left, arr)
+    }
+    if(tree.right) {
+        preOrderPrint(tree.right, arr)
+    }
+    return arr; 
+}
+
+function inOrderPrint(tree, arr=[]) {
+    if(tree.left){
+        inOrderPrint(tree.left, arr)
+    }
+    arr.push(tree.value); 
+    if(tree.right) {
+        inOrderPrint(tree.right, arr)
+    }
+    return arr; 
+}
+
+function postOrderPrint(tree, arr=[]) {
+
+    if(tree.left){
+        postOrderPrint(tree.left, arr)
+    }
+    if(tree.right) {
+        postOrderPrint(tree.right, arr)
+    }
+    arr.push(tree.value); 
+    return arr; 
+}
+
+console.log(preOrderPrint(ourTree)); 
+
+console.log(inOrderPrint(ourTree));
+
+console.log(postOrderPrint(ourTree));
+
+
+
+
+
+
 // Exercise 5
 // share price over a week is: [128, 97, 121, 123, 98, 97, 105]. If you had to buy shares in the company on one day, and sell the shares on one of the following days, write an algorithm to work out what the maximum profit.
 
@@ -136,4 +185,3 @@ const searchDewey = (theBook, theList, start=0, end=theList.length) => {
 // Exercise 6 - This is fun exercise to do - make this an optional one after you are done with all the exercises above
 // Imagine that you wanted to find what the highest floor of a 100 story building you could drop an egg was, without the egg breaking. But you only have two eggs. Write an algorithm to work out which floors you should drop the eggs from to find this out in the most efficient way
 
-.
