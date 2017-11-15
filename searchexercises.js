@@ -91,7 +91,18 @@ function depthFirstSearch(tree, value) {
         // when found return, if nothing left, return null
         // return value can be anything from that node or the entire node (e.g. the key, the value, a pointer to the entire node object)
 
-
+const searchDewey = (theBook, theList, start=0, end=theList.length) => {
+    const index = Math.floor(theList.length/2);
+    if (index === theBook) {
+        return true;
+    } else if (start>end) {
+        return false;
+    } else if (index > theBook) {
+        searchDewey(theBook, theList, start, index - 1)
+    } else {                                             // if index < theBook
+        searchDewey(theBook, theList, index + 1, end)
+    }
+}
 
 // Exercise 4
 // Then implement in-order, pre-order, and post-order functions on bst.
