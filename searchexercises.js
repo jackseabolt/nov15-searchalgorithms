@@ -87,6 +87,10 @@ function depthFirstSearch(tree, value) {
     // stored as tree?
     // array: binary search, start @ middle, and keep dividing in half until found
     // tree: implement one of tree algos, DFS depth first search in order (left, middle, right)
+        // start at root, if matching return, if less recurse left, if higher, recurse right.
+        // when found return, if nothing left, return null
+        // return value can be anything from that node or the entire node (e.g. the key, the value, a pointer to the entire node object)
+
 
 
 // Exercise 4
