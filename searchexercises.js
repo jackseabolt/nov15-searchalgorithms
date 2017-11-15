@@ -141,7 +141,6 @@ function inOrderPrint(tree, arr=[]) {
 }
 
 function postOrderPrint(tree, arr=[]) {
-
     if(tree.left){
         postOrderPrint(tree.left, arr)
     }
